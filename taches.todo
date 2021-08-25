@@ -1,0 +1,7 @@
+Shopping Cart Features :
+    ☐ afficher la liste des commandes(produits) @started(21-08-25 08:59)
+    ☐ supprimer la commande
+    ☐ augmenter la quantite du produit
+    ☐ diminuer la quantite du produit
+    ☐ afficher le prix total 
+    ☐ filtrer les commandes par le nom du produit
