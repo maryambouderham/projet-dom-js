@@ -96,6 +96,6 @@ function afficherShoppingCart(){
 
     
      
-      total.innerHTML =`<p id="prix_total">Total : ${somme}$</p>`
+      total.innerHTML =`<p id="prix_total">Total : ${somme.toFixed(2)}$</p>`
      
 }
