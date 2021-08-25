@@ -1,7 +1,7 @@
 Shopping Cart Features :
     ✔ afficher la liste des commandes(produits) @started(21-08-25 08:59) @done(21-08-25 09:43) @lasted(44m2s)
     ✔ supprimer la commande @started(21-08-25 10:08) @done(21-08-25 11:09) @lasted(1h1m48s)
-    ☐ augmenter la quantite du produit @started(21-08-25 11:17)
-    ☐ diminuer la quantite du produit
+    ✔ augmenter la quantite du produit @started(21-08-25 11:17) @done(21-08-25 11:50) @lasted(33m45s)
+    ✔ diminuer la quantite du produit @started(21-08-25 11:50) @done(21-08-25 11:50) @lasted(51s)
     ☐ afficher le prix total 
     ☐ filtrer les commandes par le nom du produit

@@ -46,6 +46,15 @@ function add_quantity(id){
  }
  afficherShoppingCart()
 }
+ function diminuer_quantite(id){
+    for(var i=0;i<COMMANDES.length;i++){
+        if(COMMANDES[i] != undefined && COMMANDES[i].id==id  )
+            if(COMMANDES[i].quantity>1 ) COMMANDES[i].quantity--
+        
+    }
+    afficherShoppingCart()
+ }
+ 
 function afficherShoppingCart(){
     //je cible ul
 
@@ -63,7 +72,7 @@ function afficherShoppingCart(){
         </p>
     </div>
     <div class="li-droite">
-        <button>
+        <button onclick="diminuer_quantite(${command?.id})">
             <i class="fas fa-minus-circle"></i>
         </button>
         <input type="number" placeholder="${command?.quantity}">
