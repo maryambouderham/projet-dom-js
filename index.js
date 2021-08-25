@@ -23,34 +23,8 @@ var COMMANDES = [
   },
 ];
 
-//je cible ul
-var list_command = document.getElementById("list-commands");
-//ajouter shopping item a la liste
-//list_command.innerHTML =shopping_item
-for (const command of COMMANDES) {
-  var shopping_item = `<li class="shopping-cart-item">
-    <div>
-        <img src="${command.thumnail}" alt="">
-        <p>
-        <span>${command.title}</span>
-        <span>${command.prix}$</span>
-        </p>
-    </div>
-    <div class="li-droite">
-        <button>
-            <i class="fas fa-minus-circle"></i>
-        </button>
-        <input type="number" placeholder="${command.quantity}">
-        <button>
-            <i class="fas fa-plus-circle"></i>
-        </button>
-        <button onclick="confirmation(${command.id})">
-            <i class="fas fa-trash-alt" ></i>
-        </button>
-    </div>
-   </li>`;
-  list_command.innerHTML += shopping_item;
-}
+afficherShoppingCart()
+
 function confirmation(id) {
   var r = confirm("voulez-vous supprimer la commande?");
   if (r == true) {
@@ -61,6 +35,18 @@ function confirmation(id) {
       }
     }
     console.table(COMMANDES);
+    afficherShoppingCart()
+  }
+}
+function add_quantity(id){
+ for(var i=0;i<COMMANDES.length;i++){
+     if(COMMANDES[i] != undefined && COMMANDES[i].id==id  )
+         COMMANDES[i].quantity++
+     
+ }
+ afficherShoppingCart()
+}
+function afficherShoppingCart(){
     //je cible ul
 
     var list_command = document.getElementById("list-commands");
@@ -81,7 +67,7 @@ function confirmation(id) {
             <i class="fas fa-minus-circle"></i>
         </button>
         <input type="number" placeholder="${command?.quantity}">
-        <button>
+        <button onclick="add_quantity(${command?.id})">
             <i class="fas fa-plus-circle"></i>
         </button>
         <button onclick="confirmation(${command?.id})">
@@ -91,5 +77,4 @@ function confirmation(id) {
    </li>`;
       if (command != undefined) list_command.innerHTML += shopping_item;
     }
-  }
 }
