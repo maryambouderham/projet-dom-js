@@ -54,12 +54,17 @@ function add_quantity(id){
     }
     afficherShoppingCart()
  }
- 
+
 function afficherShoppingCart(){
     //je cible ul
 
     var list_command = document.getElementById("list-commands");
     list_command.innerHTML = "";
+    // cibler p pour prix total
+    var total=document.getElementById("prix_total")
+      
+  
+      var somme=0
     //ajouter shopping item a la liste
     //list_command.innerHTML =shopping_item
     for (const command of COMMANDES) {
@@ -85,5 +90,12 @@ function afficherShoppingCart(){
     </div>
    </li>`;
       if (command != undefined) list_command.innerHTML += shopping_item;
+      //calculer le prix total
+      somme += (command.quantity*command.prix)
     }
+
+    
+     
+      total.innerHTML =`<p id="prix_total">Total : ${somme}$</p>`
+     
 }
