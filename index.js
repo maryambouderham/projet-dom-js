@@ -25,6 +25,14 @@ var COMMANDES = [
 
 afficherShoppingCart()
 
+function filterBytitle(){
+  //cibler linput
+  var input_filter=document.getElementById("filter-input")
+  console.log(input_filter.value)
+}
+
+
+
 function confirmation(id) {
   var r = confirm("voulez-vous supprimer la commande?");
   if (r == true) {
